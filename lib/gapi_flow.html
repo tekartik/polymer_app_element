@@ -1,0 +1,45 @@
+<!--
+  Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+<link rel="import" href="../../packages/polymer_elements/paper_button.html">
+<link rel="import" href="../../packages/polymer_elements/iron_pages.html">
+<dom-module id="tk-gapi-flow">
+    <style>
+        :host {
+            display: block;
+            overflow: auto;
+            padding: 8px;
+        }
+        #app_user_info {
+            margin-top: 16px;
+            color: lightgray;
+            font-size: small;
+        }
+        #version {
+            padding-top: 50px;
+            text-align: right;
+            color: lightgray;
+            font-size: x-small;
+            font-style: italic;
+        }
+    </style>
+
+    <template>
+        <p>Data will be synced within the app-data google drive folder of the connected user</p>
+        <paper-button raised id="app_sign_in">Sign in</paper-button>
+        <div id="app_user_info">
+        <div id="app_user_name"></div>
+        <div id="app_user_id"></div>
+        </div>
+        <p>Data is automatically synced as you make changes</p>
+        <p>You can switch to a different user</p>
+        <paper-button raised id="app_switch_user">Switch user</paper-button>
+        <p>You can disconnect the current user. Existing synced data will be removed (locally)</p>
+        <paper-button raised id="app_disconnect_user">Disconnect user</paper-button>
+
+        <div id="version">v 0.0.1</div>
+        <content></content>
+
+    </template>
+</dom-module>
