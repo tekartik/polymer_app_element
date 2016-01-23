@@ -6,10 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <script src="packages/web_components/webcomponents-lite.min.js"></script>
     <link async rel="import" href="packages/tekartik_app_element/gapi_flow.html">
+    <link async rel="import" href="packages/polymer_elements/paper_input.html">
+    <style>
+        .tk-gapi-flow-user-image {
+        }
+    </style>
 </head>
 <body>
 <tk-gapi-flow id="flow">
+    <paper-input id="p_client_id"></paper-input>
     <paper-button class="tk-gapi-flow-sign-in" raised disabled>Sign in</paper-button>
+    <paper-button class="tk-gapi-flow-sign-switch" raised disabled>Switch user</paper-button>
+    <paper-button class="tk-gapi-flow-sign-out" raised disabled>Sign out</paper-button>
+    <div class="tk-gapi-flow-user-name"></div>
+    <div class="tk-gapi-flow-user-email"></div>
+    <iron-image class="tk-gapi-flow-user-image"></iron-image>
 </tk-gapi-flow>
 
 <script type="application/dart" src="gapi_flow_example.dart">
