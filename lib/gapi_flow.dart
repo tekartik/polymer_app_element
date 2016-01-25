@@ -148,6 +148,7 @@ class GapiFlowElement extends PolymerElement with DomReadyMixin {
       Oauth2Api oauth2Api = new Oauth2Api(client);
       newUserInfo = await oauth2Api.userinfo.v2.me.get();
 
+      //devPrint(newUserInfo.toJson());
       _setDisabled(contentSignInButton, true);
       _setDisabled(contentSignOutButton, false);
       _setDisabled(contentSignSwitchButton, false);
