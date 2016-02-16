@@ -14,7 +14,7 @@ abstract class AppPage extends PolymerElement with DomReadyMixin {
   AppPage.created() : super.created();
 
   /// Override with proper id
-  String pageId;
+  //String pageId;
 
   bool activated;
 
