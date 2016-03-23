@@ -1,14 +1,5 @@
-import 'element_utils.dart';
-import 'package:polymer/polymer.dart';
-import 'package:web_components/web_components.dart';
-import 'package:googleapis_auth/auth.dart';
-import 'package:tekartik_googleapis_auth/auth_browser.dart';
 import 'dart:html';
 import 'src/base_import.dart';
-import 'package:googleapis/oauth2/v2.dart';
-import 'package:pool/pool.dart';
-import 'dom_ready_mixin.dart';
-import 'package:polymer_elements/iron_image.dart';
 import 'app_page.dart';
 
 typedef AppPageContainerSelectPageId(String pageId);

@@ -2,9 +2,10 @@ library domready_mixin;
 
 import 'dart:async';
 
-bool _debug= true; int _w;
-abstract class DomReadyMixin {
+bool _debug = true;
+int _w;
 
+abstract class DomReadyMixin {
   Completer _whenDomReadyCompleter = new Completer();
 
   Future get whenDomReady => _whenDomReadyCompleter.future;
@@ -17,7 +18,6 @@ abstract class DomReadyMixin {
     _whenDomReadyCompleter.complete();
   }
 
-
   // simulate domReady
   attached() {
     if (_debug) {
@@ -26,4 +26,3 @@ abstract class DomReadyMixin {
     new Future.delayed(new Duration(), domReady);
   }
 }
-

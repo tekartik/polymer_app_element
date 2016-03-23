@@ -25,7 +25,8 @@ class GapiFlowEvent {
 //  DbUser user;
 
   @override
-  String toString() => "GapiFlowEvent: user ${userInfo == null ? null : userInfo.toJson()}";
+  String toString() =>
+      "GapiFlowEvent: user ${userInfo == null ? null : userInfo.toJson()}";
 }
 
 @PolymerRegister('tk-gapi-flow')
@@ -127,6 +128,7 @@ class GapiFlowElement extends PolymerElement with DomReadyMixin {
       setDisabled(element, disabled);
     }
   }
+
   // call last
   tryInitialUserId(String userId) async {
     if (_flow == null) {
@@ -152,8 +154,6 @@ class GapiFlowElement extends PolymerElement with DomReadyMixin {
       _setDisabled(contentSignInButton, true);
       _setDisabled(contentSignOutButton, false);
       _setDisabled(contentSignSwitchButton, false);
-
-
 
       if (contentUserEmailElement != null) {
         contentUserEmailElement.text = newUserInfo.email;
@@ -294,6 +294,7 @@ class GapiFlowElement extends PolymerElement with DomReadyMixin {
   }
 
   @override
+
   /// needed to call mixin
   attached() {
     super.attached();

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <script src="packages/web_components/webcomponents-lite.min.js"></script>
+    <link rel="import" href="packages/polymer_elements/paper_menu.html">
+    <link rel="import" href="packages/polymer_elements/paper_item.html">
+    <link rel="import" href="packages/polymer_elements/paper_button.html">
+    <style>
+    </style>
+</head>
+<body>
+<paper-button id="p_button">Toggle subscription</paper-button>
+<paper-menu id="p_menu">
+    <paper-item>Item 1</paper-item>
+    <paper-item>Item 2</paper-item>
+    <paper-item>Item 3 (cannot be selected)</paper-item>
+</paper-menu>
+<pre id="p_out"></pre>
+
+<script type="application/dart" src="element_utils_example.dart">
+</script>
+</body>
+</html>

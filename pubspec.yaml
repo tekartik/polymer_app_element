@@ -1,4 +1,5 @@
 name: tekartik_app_element
+version: 0.0.1
 environment:
   sdk: ">=1.2.0 <2.0.0"
 dependencies:
@@ -29,6 +30,7 @@ transformers:
 - polymer:
     entry_points:
     - example/gapi_flow_example.html
+    - example/element_utils_example.html
 - $dart2js:
     $include: '**/*.bootstrap.initialize.dart'
 - dart_to_js_script_rewriter

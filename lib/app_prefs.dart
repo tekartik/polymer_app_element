@@ -6,13 +6,13 @@ class AppPrefs {
   /// _prefix typically a package name com.tekartik.app.dev
   AppPrefs(this._prefix);
 
-  String get(String key) {
-
-  }
+  //String get(String key) {}
 
   String operator [](String key) => _getItem(key);
 
-  void operator []=(String key, String value) { _setItem(key, value); }
+  void operator []=(String key, String value) {
+    _setItem(key, value);
+  }
 
   _getKey(String key) => '${_prefix}.${key}';
 

@@ -1,12 +1,13 @@
 import 'dart:html';
-
+import 'dart:async';
+import 'package:polymer/polymer.dart';
 
 void setDisabled(Element element, bool disabled) {
-    if (disabled == true) {
-      element.attributes['disabled'] = '';
-    } else {
-      element.attributes.remove('disabled');
-    }
+  if (disabled == true) {
+    element.attributes['disabled'] = '';
+  } else {
+    element.attributes.remove('disabled');
+  }
 }
 
 void setHidden(Element element, bool hidden) {
@@ -17,6 +18,18 @@ void setHidden(Element element, bool hidden) {
   }
 }
 
+///
+/// Fired when an element is manually selected in a menu
+/// even if it is the same
+/// detail['selected'] contains the future selection
+///
+Stream<CustomEvent> onIronActivate(Element element) {
+  return element.on['iron-activate'].transform(
+      new StreamTransformer<Event, CustomEvent>.fromHandlers(
+          handleData: (Event event, EventSink<CustomEvent> sink) {
+    sink.add(convertToDart(event) as CustomEvent);
+  }));
+}
 
 // Recursive into the parent to find the first parent matching the give id
 /// [includeElement] if true also check the current element id

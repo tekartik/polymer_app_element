@@ -18,7 +18,9 @@ PaperInput clientIdInput;
 
 _init() {
   if (clientId != null) {
-    flow.init(clientId: clientId, initialUserId: userId).listen((GapiFlowEvent event) {
+    flow
+        .init(clientId: clientId, initialUserId: userId)
+        .listen((GapiFlowEvent event) {
       if (event.userInfo != null) {
         userId = event.userInfo.id;
         storageSet('userId', userId);
@@ -29,6 +31,7 @@ _init() {
     });
   }
 }
+
 main() async {
   await initPolymer();
   flow = document.body.querySelector('#flow');
@@ -46,7 +49,6 @@ main() async {
     print(value);
     storageSet('clientId', emptyToNull(value));
     _init();
-
   });
 }
 
@@ -57,4 +59,5 @@ void storageSet(String key, String value) {
     storage['$storageKeyPref.$key'] = value;
   }
 }
+
 Storage storage = window.localStorage;
