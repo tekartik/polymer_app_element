@@ -18,6 +18,14 @@ void setHidden(Element element, bool hidden) {
   }
 }
 
+bool isHidden(Element element) {
+  return element.attributes.containsKey('hidden');
+}
+
+bool isDisabled(Element element) {
+  return element.attributes.containsKey('disabled');
+}
+
 ///
 /// Fired when an element is manually selected in a menu
 /// even if it is the same
