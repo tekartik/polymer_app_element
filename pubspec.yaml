@@ -3,27 +3,27 @@ version: 0.0.1
 environment:
   sdk: ">=1.2.0 <2.0.0"
 dependencies:
-  polymer_elements: ">=1.0.0-rc"
-  polymer: ">=1.0.0-rc"
-  web_components: any
-  reflectable: any
-  markdown: any
-  pool: any
-  analyzer: "<=0.27.1"
-  idb_shim: ">=1.2.1"
+  polymer_elements: ">=1.0.0-rc.9"
+  polymer: ">=1.0.0-rc.18"
+  web_components: '>=0.12.3'
+  reflectable: '>=1.0.0'
+  markdown: '>=0.11.1'
+  pool: '>=1.2.4'
+  analyzer: ">=0.27.1"
+  idb_shim: ">=1.3.5"
   tekartik_idb_provider:
     git: git://github.com/alextekartik/tekartik_idb_provider.dart
   tekartik_gapi_mock:
     git: https://bitbucket.org/alextk/gapi_mock.dart
   tekartik_google_jsapi:
     git: git://github.com/alextekartik/google-jsapi.dart
-  tekartik_utils:
-    git: git://github.com/alextekartik/tekartik_utils.dart
+  tekartik_browser_utils:
+    git: git://github.com/tekartik/tekartik_browser_utils.dart
   tekartik_html:
-    git: git://github.com/alextekartik/tekartik_html.dart
+    git: git://github.com/tekartik/tekartik_html.dart
   yacht:
     git: git://github.com/tekartik/yacht.dart
-  dart_to_js_script_rewriter: any
+  dart_to_js_script_rewriter: '>=1.0.2'
 
 transformers:
 # Needed for Html registration
@@ -38,8 +38,8 @@ transformers:
 dev_dependencies:
   test: any
   dev_test: any
-  tekartik_test:
-    git: git://github.com/alextekartik/tekartik_test.dart
+#  tekartik_test:
+#    git: git://github.com/alextekartik/tekartik_test.dart
 
 dependency_overrides:
   # polymer: ^1.0.0-rc.6
