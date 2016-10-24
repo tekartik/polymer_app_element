@@ -61,14 +61,14 @@ class GapiFlowElement extends PolymerElement with DomReadyMixin {
 
   // Make sure we create the flow twice
   Future<BrowserOAuth2Flow> _createFlow(String clientId) async {
-    return _flowPool.withResource(() async {
+    return await _flowPool.withResource(() async {
       if (_flow == null) {
         _flow = await createImplicitBrowserFlow(
             new ClientId(clientId, null), _scopes);
 
         return _flow;
       }
-    });
+    }) as Future<BrowserOAuth2Flow>;
   }
 
   /*
@@ -279,15 +279,15 @@ class GapiFlowElement extends PolymerElement with DomReadyMixin {
     contentUserImageElement = querySelector('.tk-gapi-flow-user-image');
 
     if (contentSignOutButton != null) {
-      contentSignOutButton.onClick.listen(signOut);
+      contentSignOutButton.onClick.listen((_) => signOut());
     }
 
     if (contentSignSwitchButton != null) {
-      contentSignSwitchButton.onClick.listen(signSwitch);
+      contentSignSwitchButton.onClick.listen((_) => signSwitch());
     }
 
     if (contentSignInButton != null) {
-      contentSignInButton.onClick.listen(signIn);
+      contentSignInButton.onClick.listen((_) => signIn());
     }
 
     super.domReady();
