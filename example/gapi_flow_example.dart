@@ -3,7 +3,7 @@ import 'package:polymer/init.dart';
 import 'package:tekartik_app_element/gapi_flow.dart';
 import 'package:tekartik_app_element/src/base_import.dart';
 import 'package:polymer_elements/paper_input.dart';
-import 'package:quiver/strings.dart';
+//import 'package:quiver/strings.dart';
 
 String storageKeyPref = 'com.tekartik.tekartik_app_element.gapi_flow_example';
 dynamic storageGet(String key) {
@@ -47,7 +47,7 @@ main() async {
   clientIdInput.onChange.listen((_) {
     String value = clientIdInput.value.trim();
     print(value);
-    storageSet('clientId', emptyToNull(value));
+    storageSet('clientId', value == "" ? null : value);
     _init();
   });
 }

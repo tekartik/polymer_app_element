@@ -61,14 +61,13 @@ class GapiFlowElement extends PolymerElement with DomReadyMixin {
 
   // Make sure we create the flow twice
   Future<BrowserOAuth2Flow> _createFlow(String clientId) async {
-    return await _flowPool.withResource(() async {
+    return (await _flowPool.withResource(() async {
       if (_flow == null) {
         _flow = await createImplicitBrowserFlow(
             new ClientId(clientId, null), _scopes);
-
-        return _flow;
       }
-    }) as Future<BrowserOAuth2Flow>;
+      return _flow;
+    })) as BrowserOAuth2Flow;
   }
 
   /*
